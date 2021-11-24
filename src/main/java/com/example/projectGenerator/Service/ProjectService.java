@@ -12,4 +12,8 @@ public interface ProjectService {
 
 	public Project updateProject(String title, Project project);
 
+	public Project getProject(String title);
+
+	public List<Project> getProjectsOfStudent(String uid);
+
 }

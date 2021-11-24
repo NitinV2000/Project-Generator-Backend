@@ -1,7 +1,10 @@
 package com.example.projectGenerator.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,4 +30,15 @@ public class Project {
 	private String courseName;
 	private String duration;
 	private String description;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(
+			name = "uid",
+			referencedColumnName = "uid"
+			)
+	private Student student;
+	
+	public void assignStudent(Student student) {
+		this.student = student;
+	}
 }
