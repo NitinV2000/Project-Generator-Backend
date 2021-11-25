@@ -25,4 +25,9 @@ public class FacultyServiceImpl implements FacultyService{
 		return facultyRepository.findAll();
 	}
 
+	@Override
+	public Faculty getFaculty(String uid) {
+		return facultyRepository.findById(uid).get();
+	}
+
 }

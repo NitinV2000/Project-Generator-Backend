@@ -74,4 +74,14 @@ public class ProjectServiceImpl implements ProjectService{
 		return projectRepository.findByStudent_Uid(uid);
 	}
 
+	@Override
+	public List<Project> getProjectsOfFaculty(String uid) {
+		return projectRepository.findByFac_Uid(uid);
+	}
+
+	@Override
+	public List<Project> getProjectsOfRegno(String regno) {
+		return projectRepository.findByRegno(regno);
+	}
+
 }

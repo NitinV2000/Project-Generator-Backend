@@ -10,4 +10,6 @@ public interface FacultyService {
 
 	public List<Faculty> getFacultyList();
 
+	public Faculty getFaculty(String uid);
+
 }

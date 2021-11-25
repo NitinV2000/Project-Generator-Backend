@@ -24,6 +24,7 @@ public class Project {
 	private String endDate;
 	private String link;
 	private String author;
+	private String regno;
 	private String faculty;
 	private String facultyId;
 	private String courseCode;
@@ -33,10 +34,21 @@ public class Project {
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(
-			name = "uid",
+			name = "Suid",
 			referencedColumnName = "uid"
 			)
 	private Student student;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(
+			name = "Fuid",
+			referencedColumnName = "uid"
+			)
+	private Faculty fac;
+	
+	public void assignFaculty(Faculty faculty) {
+		this.fac = faculty;
+	}
 	
 	public void assignStudent(Student student) {
 		this.student = student;
